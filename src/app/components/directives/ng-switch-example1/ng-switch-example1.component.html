@@ -1,0 +1,58 @@
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-5">
+            <h2 class="bg-primary text-white">Ng Switch Example</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="lead">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ex enim accusantium, dolores ratione facere omnis facilis necessitatibus perspiciatis ut eveniet quia aut corrupti dolor aliquam aperiam vel minima voluptatibus!
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <button class="btn btn-outline-primary" (click)="getData()">Get Data</button>
+        </div>
+    </div>
+    <div class="row mt-3" *ngIf="showResult">
+        <div class="col">
+            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                <button type="button" class="btn btn-outline-primary" (click)="updateUserStatus('personalInfo')">Personal Info</button>
+                <button type="button" class="btn btn-outline-primary" (click)="updateUserStatus('address')">Address Details</button>
+                <button type="button" class="btn btn-outline-primary" (click)="updateUserStatus('loginDetails')">Login Info</button>
+            </div>
+            <div [ngSwitch]="userStatus">
+                <div *ngSwitchCase="'personalInfo'">
+                    <dl>
+                        <dt>Name</dt>
+                        <dd>{{ userData.name.first }}</dd>
+                        <dt>Email</dt>
+                        <dd>{{ userData.email }}</dd>
+                    </dl>
+                </div>
+                <div *ngSwitchCase="'address'">
+                    <dl>
+                        <dt>City</dt>
+                        <dd>{{ userData.location.city }}</dd>
+                        <dt>State</dt>
+                        <dd>{{ userData.location.state }}</dd>
+                    </dl>
+                </div>
+                <div *ngSwitchCase="'loginDetails'">
+                    <dl>
+                        <dt>Username</dt>
+                        <dd>{{ userData.login.username }}</dd>
+                        <dt>Password</dt>
+                        <dd>{{ userData.login.password }}</dd>
+                    </dl>
+                </div>
+                <div *ngSwitchDefault>
+                    <p>Please click on the buttons to get user specfic details</p>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>

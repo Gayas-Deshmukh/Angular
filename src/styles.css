@@ -1,0 +1,11 @@
+
+  .bg-primary {
+    background: linear-gradient(45deg, black, darkred);
+  }
+  .bg-success {
+    background: linear-gradient(45deg, darkgreen, darkred);
+  }
+  .bg-dark {
+    background: linear-gradient(45deg, rgb(41, 29, 151), black);
+  }
+  

@@ -1,0 +1,27 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h2>NgIf using then and else</h2>
+                </div>
+                <div class="card-body">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" [(ngModel)]="chooseProduct">
+                        <label class="form-check-label" *ngIf="!chooseProduct">Show Car</label>
+                        <label class="form-check-label" *ngIf="chooseProduct">Show Bike</label>
+                    </div>
+                    <div *ngIf="chooseProduct; then car else bike">
+
+                    </div>
+                    <ng-template #car>
+                        <img src="https://cars.usnews.com/static/images/Auto/custom/14737/2022_Acura_ILX_1.jpg" class="img-fluid"/>
+                    </ng-template>
+                    <ng-template #bike>
+                        <img src="https://m.media-amazon.com/images/I/617OW8TPOWL._SX355_.jpg" class="img-fluid"/>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

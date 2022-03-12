@@ -1,0 +1,20 @@
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h2>ngFor Directive</h2>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li *ngFor="let mobile of mobilesData">{{ mobile.mobile }}
+                            <ol>
+                                <li *ngFor="let brand of mobile.brand">{{brand}}</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

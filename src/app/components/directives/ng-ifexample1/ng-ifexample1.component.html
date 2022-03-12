@@ -1,0 +1,64 @@
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3>NgIf Directive (Show or Hide Image)</h3>
+                </div>
+                <div class="card-body">
+                   <dl>
+                       <dt>Mobile Name</dt>
+                       <dl>{{ mobileDetails.name }}</dl>
+                       <dt>Mobile Price</dt>
+                       <dl>{{ mobileDetails.price}}</dl>
+                       <dt *ngIf="!showHideImg">Show Preview</dt>
+                       <dt *ngIf="showHideImg">Hide Preview</dt>
+                       <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" [(ngModel)]="showHideImg" type="checkbox">
+                       </div>
+                       <p>{{ showHideImg }}</p>
+                       <dl><img *ngIf="showHideImg" [src]="mobileDetails.img" height="200px" width="100px"/></dl>
+                   </dl>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+           
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3>NgIf Directive (Show or Hide Image)</h3>
+                </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" [(ngModel)]="isBike" type="checkbox" >
+                                    <label class="form-check-label" >
+                                    Bike
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" [(ngModel)]="isCar" type="checkbox" >
+                                    <label class="form-check-label" >
+                                    Car
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" [value]="isBus" (change)="setBus($event)" [name]="busTicked">
+                                    <label class="form-check-label" >
+                                    Bus
+                                    </label>
+                                </div>   
+                            </div>
+                            <div class="col-6">
+                                <img *ngIf="isBike" class="img-fluid"  src="https://i.pinimg.com/originals/d6/58/a8/d658a85057d5a11f55e0bfaaeab7930f.jpg"/>
+                                <img *ngIf="isCar" class="img-fluid" src="https://carwow-uk-wp-3.imgix.net/Volvo-XC40-white-scaled.jpg"/>
+                                <img *ngIf="isBus" class="img-fluid" src="https://en.higer.com/uploadfiles/2021/01/20210120151022187.png?S0xRNjEyNUtBLnBuZw=="/>
+                            </div>
+                        </div>
+           </div>
+            </div>            
+        </div>
+    </div>
+</div>
+
