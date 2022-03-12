@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+           <app-search (dataFromChild)="getDataFromChild($event)"></app-search>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <app-profile [datafromParent] = "userData" *ngIf="dataFound"></app-profile>
+        </div>
+        <div class="col-7">
+           <app-user-details [dataToUserDetails] = "userData" *ngIf="dataFound"></app-user-details> 
+        </div>
+    </div>
+</div>

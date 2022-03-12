@@ -1,0 +1,6 @@
+<h2 class="bg-primary text-white mt-3" align="center">NgStyle</h2>
+<div class="container " (mousemove)="changeProperties($event)" 
+ (mouseleave)="removeProperties()" 
+ [ngStyle]="backGround">Box</div>
+
+<div class="circle" [ngStyle]="circleStyle"></div>

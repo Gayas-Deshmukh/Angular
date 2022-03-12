@@ -1,0 +1,41 @@
+**Angular Decorators**
+
+- angular decorator are used to send data between diffrent component (mostly between parent & child componemt).
+- if we have two component & if we put selector of second component in first component (in html file) then first compoent is
+  is a parent component & second component is a child component of first component.
+- we can sent the the data from parent component to child component and vice versa.
+- for that we can use decorator concept.
+- there are two type of decorator
+  1) @input()
+     - input decorator is used to send data from parent component to the child component.
+     - we need to define the variable in child component for to recieve the data from parent component with input decorator function.
+     - and then we need to bind that varible defined in chid component with property of parent component.
+     - so we can bind that varible in child selector (present in parent html file).
+      syntax- 
+      <child-selector [variablePresentInChildComponent]="parentComponentProperty"></<child-selector>
+
+        how to define variable in child component?
+        syntax -  @input() varibleName;
+
+        Note -
+        we can also define custom name(alias) & that we can use in child selector
+        syntax -  @input('customVariableName') varibleName;
+        <child-selector [customVariableName]="parentComponentProperty"></<child-selector>
+
+
+  2) @output()
+     - output decorator is used to send the data from child component to its parent component 
+     - for to send data we need to create an event of type EventEmitter in child component & then we need to fire that event.
+     - for this event we need to bind one variable in child component & then we can use that variable in the selector
+       defined in parent component & then we can take data from there. 
+
+       @output() dataToParent :any = new EventEmitter();
+
+       dataToParent.emit('data');
+       <child-selector (dataToParent)="parentComponentProperty"></<child-selector>
+
+       Note -
+        we can also define custom name(alias) & that we can use in child selector
+        syntax - 
+        @output('anyName') dataToParent :any = new EventEmitter();
+        <child-selector (anyName)="parentComponentProperty"></<child-selector>

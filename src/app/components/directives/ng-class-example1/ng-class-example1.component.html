@@ -1,0 +1,54 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header bg-dark text-white">
+                    <h2>NgClass Directives</h2>
+                </div>
+                <div class="card-body">
+                    <input type="text" 
+                           required
+                           minlength="4"
+                           class="form-control"  
+                            ngModel                 
+                           #inputRef ="ngModel"
+                           [ngClass]="{ 'valide' : inputRef.valid , 'invalide' : inputRef.invalid}"
+                           /><br>    <!-- ngModel will give us two properties valid & invalid -->
+
+                    <button [disabled]="inputRef.invalid" [ngClass]="{ 'btn btn-success': inputRef.valid , 'btn btn-danger' : inputRef.invalid}" (click)="sendData(inputRef)">Send Data</button>
+                </div>
+                <div class="card-footer">
+                    <p>{{ data  }}</p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-6">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" [(ngModel)]="changetheme">
+                <label class="form-check-label" >Switch to DarkMode</label>
+            </div>
+            <p>{{ changetheme }}</p>
+            <div class="card" [ngClass]="{'applytheme': changetheme}">
+                <div class="card-header">
+                    <h2>Login Form</h2>
+                </div>
+                <div class="card-body">
+                    <dl>
+                        <dt>Username</dt>
+                        <dd><input type="text" class="form-control"/></dd>
+                        <dt>Password</dt>
+                        <dd><input type="password" class="form-control"/></dd>
+                    </dl>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary w-100">Login</button>
+                </div>
+            </div>
+            .
+        </div>
+    </div>
+</div>

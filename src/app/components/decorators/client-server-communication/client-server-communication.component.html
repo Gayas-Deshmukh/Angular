@@ -1,0 +1,25 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h2>Client Server Communication</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <app-client (dataFromClient)="clientData($event)"
+                                        [takeFromServer]="dataToClient"
+                            ></app-client>
+                        </div>
+                        <div class="col-6">
+                            <app-server [takenFromClient]="dataToServer"
+                                        (dataFromServer) = "serverData($event)"
+                            ></app-server>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

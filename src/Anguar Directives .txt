@@ -1,0 +1,81 @@
+
+**Angular Directives**
+
+- there are two types of directives in Angular
+- 1. Structural Directives  2. Attribute directives
+
+ 1. Structural Directives
+  - these directives are you used to add or remove html elements from DOM
+  - basically these directives are used to manupulate DOM.
+  - Structural directives are used with * (star)
+  - types
+    a) ngIf
+      - it is used to add html elements based on condition
+      - if condition ids true the it will add the elements else it remove the elements
+        Syntax - 
+               <h2 *ngIf="boolean expression OR boolean variable">My name is Gayas</h2>
+      - we can also display two different container (ng-template) based on condition we want 
+        so for that we can make use of 'then' & 'else' , so if condition is true then it will show 
+        then block otherwise else block. for a block creation we can use angular <ng-template>
+        ( do define id for ng-template we can make use of # symbole)
+        e.g 
+           <div *ngIf="boolean condition OR variable; then first else second"> </div>
+
+           <ng-template #first>
+             this is first
+           </ng-template>
+
+           <ng-template #second>
+             this is second
+           </ng-template>
+
+    b) ngFor
+      - it works like for loop.
+      - by using ng for we can iterate over an array.
+      - the elements which we want to iterate, there we can make use of this directie.
+        Syntax - 
+          <h2 *ngFor="let user of userDate> {{ user.name }} </h2>
+
+    c) ngSwitch
+      - it works like switch case 
+      Syntax
+
+        <div [ngSwitch]="value">
+            <p *ngSwitchCase="'first'" >This first element</p>
+            <p *ngSwitchCase="'second'" >This second element</p>
+            <p *ngSwitchCase="'third'" >This third element</p>
+            <p *ngSwitchDefault >This is default element</p>
+        </div>
+
+     - based on matched case it will print respective statement , if any case does not matched then it will 
+       execute defaultCase statement.
+
+   ------------------------------------------------------- 
+
+ 2. Attribute Directives
+    - this directives does not manupulate the DOM but it will used to manupulate he DOM content.
+    types
+    1) [ngModel]
+     - it can also be used to to define referance for element.
+
+    2) [ngClass]
+    -  it is used to apply css class dynamically.
+       Syntax -
+        [ngClass] = "{ 'className1' : booleanCondition or variable , 'className2' : booleanCondition or variable }"
+    
+    -  we can define multiple css classes in the form of objects.
+
+    3) [ngStyle]
+    -  it is used to apply css Style dynamically.
+    -  for this , Generally we will define Styles in .ts file in the form of object
+       & then we will bind it with 'ngStyle' directive
+       Syntax -
+       [ngStyle]="styleObject"
+
+       styleObject = {
+         backgroundColor:'red',
+         color:'white'
+       }
+
+       we will change this 'styleObject' object property value in ts file dynamically & it will get reflected on UI.
+    
