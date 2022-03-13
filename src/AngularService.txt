@@ -1,0 +1,14 @@
+**Angular Services**
+- Angular services are special class.
+- Angualar services are similar to the angular component.
+- to create any service using Angular CLI we can use following comd
+   ng g s <serviceName>
+- it will create only two files 
+  1) .ts
+  2) .spect.ts
+- services are basically used to define some business logic.
+- by using services we can share data among different components.
+- many components can access same service as per their requirements.(if the component want to execute same business logic).
+- services uses special decorator called '@injectible()' decorator.
+  - this decorator has one property called 'providedIn'.
+  - its value is 'root' which means that any component can access that service.

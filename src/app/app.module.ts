@@ -21,6 +21,11 @@ import { UserDetailsComponent } from './components/decorators/git-hub-search/use
 import { ClientServerCommunicationComponent } from './components/decorators/client-server-communication/client-server-communication.component';
 import { ClientComponent } from './components/decorators/client-server-communication/client/client.component';
 import { ServerComponent } from './components/decorators/client-server-communication/server/server.component';
+import { ServicesComponent } from './components/services/services.component';
+import { User1Component } from './components/services/example_1/user1/user1.component';
+import { User2Component } from './components/services/example_1/user2/user2.component';
+import { ShowTableComponent } from './components/services/example2/show-table/show-table.component';
+import { ShowCardComponent } from './components/services/example2/show-card/show-card.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,12 @@ import { ServerComponent } from './components/decorators/client-server-communica
     UserDetailsComponent,
     ClientServerCommunicationComponent,
     ClientComponent,
-    ServerComponent
+    ServerComponent,
+    ServicesComponent,
+    User1Component,
+    User2Component,
+    ShowTableComponent,
+    ShowCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col bg-dark text-white">
+            <h1>Angular Services</h1>
+        </div>
+        <!-- <app-user1></app-user1>
+        <app-user2></app-user2> -->
+        
+    </div>
+    <div class="container mt-3">
+        <div class=" container form-check form-switch">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="switchMode">
+            <label class="form-check-label" *ngIf="!switchMode">Switch to Card Mode</label>
+            <label class="form-check-label" *ngIf="switchMode">Switch to Table Mode</label>
+        </div>
+    </div>
+    <app-show-table *ngIf="!switchMode" ></app-show-table>
+    <app-show-card  *ngIf="switchMode"></app-show-card>
+
+</div>
