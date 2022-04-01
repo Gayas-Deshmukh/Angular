@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row mt-2">
+        <div class="col">
+            <h3 class="text-primary ">All Product Details</h3>
+            <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium, cupiditate nihil. Aspernatur earum, cum qui sed nostrum voluptatum repellendus! Ea sed aspernatur fugiat magnam facere voluptatum cum expedita laboriosam iure!
+                Aliquid quae numquam cupiditate dolorum at asperiores fugiat deleniti eum! Recusandae pariatur cupiditate aliquam at voluptatum voluptate minima vel nisi! Tenetur numquam dolorum totam velit mollitia assumenda porro quo optio!</p>
+            <button class=" btn btn-primary">Details</button>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-4 mt-1" *ngFor="let product of allProductDetails" >
+            <div class="card">
+                <div class="card-header">
+                   <img [src]="product.image"  height="350px" width="400px"/> 
+                </div>
+                <div class="card-body">
+                    <p>{{ product.title }}</p>
+                    <p>{{ product.category }}</p>
+                    <p>{{ product.price | currency }}</p>
+                    <button class="btn btn-primary">Product Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

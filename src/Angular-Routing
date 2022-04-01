@@ -1,0 +1,16 @@
+**Angular routing**
+- Angular routing are used  to navigate from one component to another component. 
+- for that we need to have routing file in our project. 
+- in that file we can define path and respective component where we want to navigate.
+- we can use that path defined in routing file into template file for navigation.
+- in template file we can use 'routerLink' attribute to bind with path.
+- after navigation where to render data or component? ,for that we need to define one tag called 
+  '<router-outlet></router-outlet>' in template where we want to render data.
+
+  **HttpClientModule**
+  - we can make the request to server using 'fetch()' method & fetch method gives us promise object,
+    from promise we can convert data into json using then() method & use that data. 
+  - but angular provoids us one module called 'HttpClientModule' , by using which we can make request to server
+    if you use this module then we will get the data from server in the form of 'observabsle'.
+    we need to subscribe to the observable for to get the actual data. 
+  - observable is part of rxJs library , which is used to perform asynchronous operation.

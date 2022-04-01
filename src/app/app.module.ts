@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { DirectivesComponent } from './components/directives/directives.component';
@@ -30,6 +31,15 @@ import { FormsComponent } from './components/forms/forms.component';
 import { FormValidationComponent } from './components/forms/form-validation/form-validation.component';
 import { ReactiveFormComponent } from './components/forms/reactive-form/reactive-form.component';
 import { ReactiveformFormbuilderComponent } from './components/forms/reactiveform-formbuilder/reactiveform-formbuilder.component';
+import { ShoppingSiteComponent } from './components/routing/shopping-site/shopping-site.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/routing/shopping-site/home/home.component';
+import { ProductListComponent } from './components/routing/shopping-site/product-list/product-list.component';
+import { CategoryComponent } from './components/routing/shopping-site/category/category.component';
+import { SupportComponent } from './components/routing/shopping-site/support/support.component';
+import { ElectronicComponent } from './components/routing/shopping-site/category/electronic/electronic.component';
+import { JeweleryComponent } from './components/routing/shopping-site/category/jewelery/jewelery.component';
+import { PageNotFoundComponent } from './components/routing/shopping-site/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -60,12 +70,22 @@ import { ReactiveformFormbuilderComponent } from './components/forms/reactivefor
     FormsComponent,
     FormValidationComponent,
     ReactiveFormComponent,
-    ReactiveformFormbuilderComponent
+    ReactiveformFormbuilderComponent,
+    ShoppingSiteComponent,
+    HomeComponent,
+    ProductListComponent,
+    CategoryComponent,
+    SupportComponent,
+    ElectronicComponent,
+    JeweleryComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
