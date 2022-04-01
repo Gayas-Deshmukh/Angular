@@ -1,0 +1,66 @@
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header text-white bg-secondary">
+                    <h2>Template Driven Form</h2>
+                </div>
+                <div class="card-body">
+                    <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)"> 
+                        <dl>
+                            <dt>UserName</dt>
+                            <dd><input type="text" required minlength="3" class="form-control" name="user" ngModel #userName="ngModel"/></dd>
+                            <dd>
+                                <div *ngIf="userName.touched">
+                                    <span class="text-danger" *ngIf="userName.errors?.required">Enter value for UserName</span>
+                                    <span class="text-danger" *ngIf="userName.errors?.minlength">
+                                        Enter mininmum 3 chars</span>
+                                </div>
+                            </dd>
+                            <dt>Mobile No</dt>
+                            <dd><input type="text"  class="form-control" name="mobile" ngModel /></dd>
+                            <button class="btn btn-success w-100" type="submit"  [disabled]="regForm.invalid">Register</button>
+                        </dl>
+                    </form>  
+                </div>
+                <div class="card-footer">
+                   <div class="row">
+                       <div class="col">
+                        <dl>
+                            <dt class="text-warning">Form Validaion</dt>
+                            <dt>Pristine: True when form is not-modified</dt>
+                            <dd>{{ regForm.pristine }}</dd>
+                            <dt>Dirty: True when form is modified</dt>
+                            <dd>{{ regForm.dirty }}</dd>
+                            <dt>Valid: True when form is valid</dt>
+                            <dd>{{ regForm.valid }}</dd>
+                            <dt>InValid: True when form is Invalid</dt>
+                            <dd>{{ regForm.invalid }}</dd>
+        
+                        </dl>
+                       </div>
+                   </div>
+                   <div class="row">
+                    <div class="col">
+                     <dl>
+                         <dt class="text-warning">Field(Input) Validaion</dt>
+                         <dt>Pristine: True when form is not-modified</dt>
+                         <dd>{{ userName.pristine }}</dd>
+                         <dt>Dirty: True when form is modified</dt>
+                         <dd>{{ userName.dirty }}</dd>
+                         <dt>Valid: True when form is valid</dt>
+                         <dd>{{ userName.valid }}</dd>
+                         <dt>InValid: True when form is Invalid</dt>
+                         <dd>{{ userName.invalid }}</dd> 
+                         <dt>Touch: True when form is touched</dt>
+                         <dd>{{ userName.touched }}</dd>  
+                         <dt>Un-Touch: True when form is un-touched</dt>
+                         <dd>{{ userName.untouched }}</dd>    
+                     </dl>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

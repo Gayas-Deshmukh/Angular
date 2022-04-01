@@ -1,0 +1,36 @@
+** Forms **
+- In Angular forms ae used to accept the data from User & submit it to the server.
+- in angular forms are classified into two types 
+
+1) Template Driven Forms
+  - in this types of form we will write everything in Template.
+  - also we can do the validation in template itself.
+  - if we don't want to change form in future then we can use this form
+ 
+2) Reactive Form (Model Driven Form)
+  - in this type of form we can create UI in Template but we will do validation in controller.
+  - mostly this form is being used in industry.
+  - in reactive form we can add controls dynamically
+  - for that we can make use of FormGroup, FormControl
+  - for complex form also we can use this types of form
+
+     we can also use FormBuilder to create Reactive form
+     - FormBuilder different methods/services like group,control,array
+
+- Angular provide validation in two ways
+  1) Form state validation services
+    - it is applicable for form
+      a) pristine - if form is Not-Modified then it return TRUE else return FALSE.
+      b) dirty    - if form is Modified then it return TRUE else return FALSE.
+      c) valid    - if form is valid return TRUE else return FALSE.
+      d) invalid  - if form is invalide return TRUE else FALSE.
+
+  2) input state validation services
+    - it is applicable for input field
+      a) pristine - if field is Not-Modified then it return TRUE else return FALSE.
+      b) dirty    - if field is Modified then it return TRUE else return FALSE.
+      c) valid    - if field is valid return TRUE else return FALSE.
+      d) invalid  - if field is invalide return TRUE else FALSE.
+      e) touch    - if field is touched then it will return TRUE else return FALSE
+      f) untouched - if field is untouched then it will return TRUE else return FALSE
+     

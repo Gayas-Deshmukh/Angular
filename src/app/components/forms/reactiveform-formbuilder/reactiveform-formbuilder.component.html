@@ -1,0 +1,47 @@
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header text-white bg-warning">
+                    <h2>Reactive Form - Using Form Builder</h2>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="registerForm" (submit)="submitForm()">
+                        <h2 class="text-white bg-secondary" align="center">Register User</h2>
+                        <dl>
+                            <dt>User Name</dt>
+                            <dd><input type="text" class="form-control" formControlName="uname" [ngClass]="{'borderColor' : submitted && registerForm.controls['uname'].errors} " /></dd>
+                            <dd class="text-danger" *ngIf="submitted && registerForm.controls['uname'].errors">
+                                <span *ngIf="registerForm.controls['uname'].errors['required']">Name is required</span>
+                                <span *ngIf="registerForm.controls['uname'].errors['minlength']">Minimum 5 chars are required</span>
+                                <span *ngIf="registerForm.controls['uname'].errors['maxlength']">Chars should not exceed 10 </span>
+                            </dd>
+                            <dt>Email</dt>
+                            <dd><input type="text" class="form-control" formControlName="email" [ngClass]="{'borderColor' : submitted && registerForm.controls['email'].errors}" /></dd>
+                            <dd class="text-danger" *ngIf="submitted && registerForm.controls['email'].errors">
+                                <span *ngIf="registerForm.controls['email'].errors['required']">Email is required</span>
+                                <span *ngIf="registerForm.controls['email'].errors['email']">Enter valid email</span>
+                            </dd>
+                            <dt>Phone</dt>
+                            <dd><input type="text" class="form-control" formControlName="phone" [ngClass]="{'borderColor' : submitted && registerForm.controls['phone'].errors}" /></dd>
+                            <dd class="text-danger" *ngIf="submitted && registerForm.controls['phone'].errors">
+                                <span *ngIf="registerForm.controls['phone'].errors['required']">Phone is required</span>
+                                <span *ngIf="registerForm.controls['phone'].errors['pattern']">Enter valid Phone Number</span>
+                            </dd>
+                            <dd>
+                                <div>
+                                    <h5>Upload File <button type="button" class="btn btn-info" (click)="addControl()">+Add</button></h5>
+                                    <div *ngFor="let nControl of controlArray.controls; let i = index" class="mt-2">
+                                        <input type="file" class="form-control w-75" formControlName="i"/>
+                                        <button type="button" class="btn btn-danger mt-1" (click)="removeControl(i)">X</button>
+                                    </div>
+                                </div>
+                            </dd>
+                            <dd><button class="btn btn-outline-primary w-100" type="submit">Submit</button></dd>
+                        </dl>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

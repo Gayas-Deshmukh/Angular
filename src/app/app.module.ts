@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DirectivesComponent } from './components/directives/directives.component';
@@ -26,6 +26,10 @@ import { User1Component } from './components/services/example_1/user1/user1.comp
 import { User2Component } from './components/services/example_1/user2/user2.component';
 import { ShowTableComponent } from './components/services/example2/show-table/show-table.component';
 import { ShowCardComponent } from './components/services/example2/show-card/show-card.component';
+import { FormsComponent } from './components/forms/forms.component';
+import { FormValidationComponent } from './components/forms/form-validation/form-validation.component';
+import { ReactiveFormComponent } from './components/forms/reactive-form/reactive-form.component';
+import { ReactiveformFormbuilderComponent } from './components/forms/reactiveform-formbuilder/reactiveform-formbuilder.component';
 
 @NgModule({
   declarations: [
@@ -52,11 +56,16 @@ import { ShowCardComponent } from './components/services/example2/show-card/show
     User1Component,
     User2Component,
     ShowTableComponent,
-    ShowCardComponent
+    ShowCardComponent,
+    FormsComponent,
+    FormValidationComponent,
+    ReactiveFormComponent,
+    ReactiveformFormbuilderComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
