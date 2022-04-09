@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header text-white bg-primary">
+                 <h2> Parent Component</h2>
+                </div>
+                <div class="card-body">
+                    <dl>
+                        <dt>Enter Data</dt>
+                        <dd> 
+                            <input type="text" class="form-control" name="data" [(ngModel)]="inputData"/>
+                        </dd>
+                        <button class="btn btn-success mt-2" (click)="sendData()">Send Data Child</button>
+                    </dl>
+                    <app-chilld [cData]="pData">I am from child selecter</app-chilld>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>

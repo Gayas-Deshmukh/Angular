@@ -40,6 +40,9 @@ import { SupportComponent } from './components/routing/shopping-site/support/sup
 import { ElectronicComponent } from './components/routing/shopping-site/category/electronic/electronic.component';
 import { JeweleryComponent } from './components/routing/shopping-site/category/jewelery/jewelery.component';
 import { PageNotFoundComponent } from './components/routing/shopping-site/page-not-found/page-not-found.component';
+import { LifeCyleHooksComponent } from './components/life-cyle-hooks/life-cyle-hooks.component';
+import { ParentComponent } from './components/life-cyle-hooks/parent/parent.component';
+import { ChilldComponent } from './components/life-cyle-hooks/chilld/chilld.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +81,10 @@ import { PageNotFoundComponent } from './components/routing/shopping-site/page-n
     SupportComponent,
     ElectronicComponent,
     JeweleryComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LifeCyleHooksComponent,
+    ParentComponent,
+    ChilldComponent
   ],
   imports: [
     BrowserModule,

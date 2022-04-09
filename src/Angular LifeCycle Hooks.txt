@@ -1,0 +1,65 @@
+**Angular LifeCycle Hooks**
+
+- in angular component also have lifecycle.
+- basically it is a period of component creation till component get distroyed.
+- during this period component go throught different phases.
+- those phases are represented by different methods/Hooks
+
+those lifecycle hooks are listed below :
+1) Constructor()
+2) ngOnChanges()
+3) ngOnInit()
+4) ngDoCheck()
+5) ngAfterContentInit()
+6) ngAfterContentChecked()
+7) ngAfterViewInit()
+8) ngAfterViewChecked()
+9) ngOnDestroy()
+
+- these methods will get called in between component creation & component distroy.
+
+1) Constructor()
+   - it will get called whenever component instance is created.
+
+2) ngOnChanges()
+   - this method will get called multiple times.
+   - first, this  method will get called when component is get loaded in DOM.
+   - it will get also called when @input() decorator propeties get changed or updated.
+
+3) ngOnInit()
+   - this method will get called whenever component is get initialized.
+
+4) ngDoCheck()
+   - whenever there is some change or update in component then this method get called.
+   - this method will get called multiple time.
+
+5) ngOnDestroy()
+   - it will get called only one in lifecycle.
+   - it will get called before removing component from the DOM.
+
+6) ngAfterContentInit() 
+  - generally to establish parent child relationship we can use child component selector into parent component.
+  - if we define any content for that child tag then that content will get loaded in child template but
+    for that we need to use <ng-content> tag in to child template.
+    e.g
+     
+     <app-child>Some Data</app-child>
+
+     child.component.html
+     <ng-content></ng-content>
+   
+   - this method will get called whenever data present in child selector tag will get loaded into ng-content first time.
+   - this method will get called only once in entire lifecycle.
+
+7) ngAfterContentChecked()
+  - this method will get called whenever data get updated into <ng-content>
+  - this method will get called multiple times.
+
+8) ngAfterViewInit()
+  - when parent component get loaded or initialized completely then this method will get called.
+
+9) ngAfterViewChecked()
+  - when all child components of current component will get loaded completely then this method will get called.
+
+- all these methods will get called in sequence as listed above.
+- all these methods are declared into respective interfaces.
